@@ -1,21 +1,4 @@
-import numpy as np
-import pandas as pd
-import nltk
-from fastapi import FastAPI,UploadFile,File
-from pydantic import BaseModel
+from api import *
+import uvicorn
 
-class FileHandler(BaseModel):
-    file: UploadFile
-
-class TextCleaner():
-    pass
-
-class PDFHandler():
-    pass
-
-class CSVHandler():
-    pass
-
-class WebDataHandler():
-    # web scraper based on URL passed into form or from csv files
-    pass
+uvicorn.run(app=app,host='127.0.0.1',port=8000)
